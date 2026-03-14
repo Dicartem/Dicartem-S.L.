@@ -568,26 +568,119 @@
         lastScrollTop = scrollTop;
     });
 </script>
-<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--primary-wood); color: white; padding: 20px; text-align: center; z-index: 9999; box-shadow: 0 -4px 10px rgba(0,0,0,0.2);">
-    <p style="margin: 0; font-size: 0.95em; display: inline-block; vertical-align: middle;">
-        Utilizamos cookies propias y de terceros para mejorar nuestros servicios y analizar el tráfico. 
-        <a onclick="showLegalPage('page-cookies')" style="color: #d4c8c0; text-decoration: underline; cursor: pointer; margin-left: 5px;">Leer Política de Cookies</a>.
-    </p>
-    <button onclick="aceptarCookies()" style="background-color: var(--light-wood); color: white; border: none; padding: 10px 25px; margin-left: 20px; border-radius: 8px; font-weight: 600; cursor: pointer; vertical-align: middle; transition: 0.3s;">Aceptar</button>
+<style>
+    /* Estilos del modal y fondo oscuro */
+    .cookie-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9998; }
+    .cookie-modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; z-index: 9999; max-width: 500px; width: 90%; box-shadow: 0 10px 30px rgba(0,0,0,0.2); color: #333; font-family: var(--font-body); }
+    .cookie-modal h3 { margin-top: 0; color: var(--primary-wood); border-bottom: 2px solid #eee; padding-bottom: 10px; font-family: var(--font-heading); }
+    .cookie-option { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+    .cookie-option label { font-weight: 600; color: var(--text-heading); }
+    .cookie-option p { margin: 5px 0 0 0; font-size: 0.85em; color: #666; }
+    
+    /* Botones */
+    .cookie-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;}
+    .btn-cookie { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; font-family: var(--font-body); font-size: 0.95em; }
+    .btn-accept { background-color: var(--primary-wood); color: white; }
+    .btn-accept:hover { background-color: #332822; }
+    .btn-reject { background-color: #eee; color: #333; }
+    .btn-reject:hover { background-color: #ccc; }
+    .btn-config { background-color: transparent; border: 1px solid var(--primary-wood); color: var(--primary-wood); }
+    .btn-config:hover { background-color: #f9f9f9; }
+    
+    /* Botones de interruptor (Toggle) */
+    .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 24px; }
+    .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+    input:checked + .slider { background-color: var(--light-wood); }
+    input:checked + .slider:before { transform: translateX(20px); }
+    input:disabled + .slider { background-color: var(--primary-wood); cursor: not-allowed; opacity: 0.7; }
+</style>
+
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: white; color: #333; padding: 20px; z-index: 9997; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); border-top: 4px solid var(--primary-wood);">
+    <div class="container" style="padding: 0; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+        <p style="margin: 0; text-align: center; font-size: 0.95em;">
+            En Dicartem S.L. utilizamos cookies propias y de terceros para asegurar el funcionamiento de la web, fines analíticos y mostrar publicidad personalizada. 
+            <a onclick="showLegalPage('page-cookies')" style="color: var(--light-wood); text-decoration: underline; cursor: pointer;">Política de Cookies</a>.
+        </p>
+        <div class="cookie-btns">
+            <button class="btn-cookie btn-reject" onclick="rechazarCookies()">Rechazar</button>
+            <button class="btn-cookie btn-config" onclick="abrirConfiguracion()">Personalizar</button>
+            <button class="btn-cookie btn-accept" onclick="aceptarTodas()">Aceptar todas</button>
+        </div>
+    </div>
+</div>
+
+<div id="cookie-overlay" class="cookie-overlay"></div>
+<div id="cookie-modal" class="cookie-modal">
+    <h3>Configuración de Cookies</h3>
+    <p style="font-size: 0.9em; margin-bottom: 20px; color: #555;">Seleccione las cookies que desea aceptar. Las cookies técnicas son estrictamente necesarias para el funcionamiento de la web.</p>
+    
+    <div class="cookie-option">
+        <div>
+            <label>Técnicas (Necesarias)</label>
+            <p>Permiten el funcionamiento básico de la web. No se pueden desactivar.</p>
+        </div>
+        <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
+    </div>
+    <div class="cookie-option">
+        <div>
+            <label>Analíticas</label>
+            <p>Miden el tráfico y comportamiento para mejorar la experiencia.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="check-analytics" checked><span class="slider"></span></label>
+    </div>
+    <div class="cookie-option" style="border-bottom: none;">
+        <div>
+            <label>Publicitarias</label>
+            <p>Muestran anuncios relevantes según su perfil de navegación.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="check-ads" checked><span class="slider"></span></label>
+    </div>
+
+    <div class="cookie-btns" style="margin-top: 25px;">
+        <button class="btn-cookie btn-accept" style="width: 100%;" onclick="guardarConfiguracion()">Guardar mis preferencias</button>
+    </div>
 </div>
 
 <script>
-    // Mostrar el banner solo si el usuario no ha aceptado antes
+    const banner = document.getElementById("cookie-banner");
+    const modal = document.getElementById("cookie-modal");
+    const overlay = document.getElementById("cookie-overlay");
+
+    // Revisar si ya ha elegido antes
     document.addEventListener("DOMContentLoaded", function() {
-        if (!localStorage.getItem("cookiesAceptadas_dicartem")) {
-            document.getElementById("cookie-banner").style.display = "block";
+        if (!localStorage.getItem("dicartem_cookies_config")) {
+            banner.style.display = "block";
         }
     });
 
-    // Función para ocultar el banner y guardar la preferencia
-    function aceptarCookies() {
-        localStorage.setItem("cookiesAceptadas_dicartem", "true");
-        document.getElementById("cookie-banner").style.display = "none";
+    function aceptarTodas() {
+        localStorage.setItem("dicartem_cookies_config", JSON.stringify({ analytics: true, ads: true }));
+        cerrarTodo();
+    }
+
+    function rechazarCookies() {
+        localStorage.setItem("dicartem_cookies_config", JSON.stringify({ analytics: false, ads: false }));
+        cerrarTodo();
+    }
+
+    function abrirConfiguracion() {
+        modal.style.display = "block";
+        overlay.style.display = "block";
+    }
+
+    function guardarConfiguracion() {
+        const analytics = document.getElementById("check-analytics").checked;
+        const ads = document.getElementById("check-ads").checked;
+        localStorage.setItem("dicartem_cookies_config", JSON.stringify({ analytics: analytics, ads: ads }));
+        cerrarTodo();
+    }
+
+    function cerrarTodo() {
+        banner.style.display = "none";
+        modal.style.display = "none";
+        overlay.style.display = "none";
     }
 </script>
 </body>
