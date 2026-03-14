@@ -274,6 +274,376 @@
             <a onclick="showMainPage('#nosotros')">Nosotros</a>
             <a onclick="showMainPage('#catalogos')">Catálogos</a>
             <a onclick="showMainPage('#trabajos')">Trabajos</a>
+            <a onclick="showMainPage('#contacto')">Contacto</a>
+            <a onclick="showMainPage('#foro')">Preguntas</a>
+        </nav>
+    </div>
+</header>
+
+<main id="page-main" class="container">
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>¡Bienvenido a Dicartem S.L.!</h2>
+            <p>Expertos en carpintería y ebanistería con 35 años de experiencia. Creamos soluciones a medida satisfactorias para todo tipo de presupuestos.</p>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="about-wrapper">
+            <h2 style="text-align: center;">Quiénes Somos</h2>
+            <div class="about-grid">
+                <div class="about-text-content">
+                    <p>En <strong>Dicartem S.L.</strong>, somos un equipo apasionado por la madera con una larga trayectoria en el diseño y fabricación de trabajos de ebanistería.</p>
+                    <p>Durante más de tres décadas, hemos satisfecho los requerimientos de calidad, estética y buen precio de nuestros clientes, convirtiendo cada proyecto en una pieza única para todo tipo de espacios, incluyendo hogares, oficinas, hoteles, restaurantes y grandes instalaciones como estadios.</p>
+                    <p>Contamos con el talento, la tecnología y la experiencia necesarios para crear soluciones adecuadas y satisfactorias que resalten la belleza, funcionalidad y armonía de cualquier entorno.</p>
+                </div>
+                <div class="about-services">
+                    <h4>Nuestras Especialidades</h4>
+                    <ul>
+                        <li>Fabricación de sillas (madera vista y para tapizar)</li>
+                        <li>Estructuras y armaduras para sofás y sillones</li>
+                        <li>Patas de madera y trabajos de torneado a medida</li>
+                        <li>Carpintería integral para profesionales tapiceros</li>
+                        <li>Restauración de muebles antiguos</li>
+                        <li>Montureros para guadarneses, perchas, etc.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogos">
+        <div>
+            <h2 style="text-align: center;">Nuestros Catálogos</h2>
+            <p style="text-align: center;">Explore nuestra variedad de productos diseñados para profesionales y particulares.</p>
+            <div class="catalog-grid">
+                <div class="catalog-card">
+                    <h3>Armaduras y Sofás</h3>
+                    <p>Estructuras y armazones de alta resistencia y durabilidad específicos para la fabricación de sofás y sillones.</p>
+                    <a href="catalogos/armaduras-sofas.pdf" class="btn" target="_blank">Descargar Catalogo</a>
+                </div>
+                <div class="catalog-card">
+                    <h3>Sillas y Taburetes</h3>
+                    <p>Amplia gama de diseños en sillas de madera vista, taburetes y esqueletos listos para ser tapizados a su gusto.</p>
+                    <a href="catalogos/sillas-taburetes.pdf" class="btn" target="_blank">Descargar Catalogo</a>
+                </div>
+                <div class="catalog-card">
+                    <h3>Patas y Torneados</h3>
+                    <p>Colección de patas para sofás y sillones, así como todo tipo de piezas de madera con torneados personalizados y a medida.</p>
+                    <a href="catalogos/patas-torneados.pdf" class="btn" target="_blank">Descargar Catalogo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trabajos">
+        <div class="gallery-wrapper">
+            <h2 style="text-align: center; margin-bottom: 20px;">Trabajos Recientes</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Descubra una muestra de nuestra dedicación y precisión en cada proyecto.</p>
+            
+            <div class="gallery">
+                <img src="Silla1.jpg" alt="Trabajo Dicartem 1">
+                <img src="Silla2.jpg" alt="Trabajo Dicartem 2">
+                <img src="Silla3.jpg" alt="Trabajo Dicartem 3">
+                <img src="Silla4.jpg" alt="Trabajo Dicartem 4">
+                <img src="Silla5.jpg" alt="Trabajo Dicartem 5">
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <div class="gallery-wrapper">
+            <h2 style="text-align: center;">Contacto</h2>
+            
+            <div class="contact-details">
+                <div class="contact-info-block">
+                    <h4>Nuestra Fábrica</h4>
+                    <p>DICARTEM S.L.<br>Avda. de los pintores nº4<br>45220 Yeles (Toledo) ESPAÑA</p>
+                </div>
+                <div class="contact-info-block">
+                    <h4>Comuníquese con nosotros</h4>
+                    <p>Móvil: +34 647 73 88 55 (PABLO TEMPRANO)<br>Fijo: 925 54 52 78</p>
+                    <p>Correo: dicartem@hotmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicartem S.L. | Carpintería y Ebanistería en Yeles</title>
+        <script>
+  // Este código detecta si la ruta no es la principal y redirige al inicio
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    window.location.href = 'https://www.dicartem.com/';
+  }
+</script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Generales y Reseteo */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-wood: #4A3B32; /* Tono madera oscuro */
+            --light-wood: #8C7A6B;    /* Tono madera claro */
+            --bg-body: #F4EFEA;      /* Fondo base más cálido */
+            --bg-secondary: #E9E2D8; 
+            --text-main: #333;
+            --text-heading: #2A211C;
+            --shadow-subtle: 0 4px 6px rgba(0,0,0,0.06);
+            --shadow-hover: 0 8px 16px rgba(0,0,0,0.1);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Open Sans', sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: var(--font-body);
+            /* Fondo con patrón sutil de puntos para darle vida a los márgenes */
+            background-color: var(--bg-body);
+            background-image: radial-gradient(#D8CEBD 2px, transparent 2px);
+            background-size: 30px 30px;
+            color: var(--text-main);
+            line-height: 1.8;
+            padding-top: 180px; /* Compensación por la cabecera fija */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--text-heading);
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2.4em; }
+        h3 { font-size: 1.8em; }
+        h4 { font-size: 1.4em; }
+
+        p { margin-bottom: 20px; }
+
+        /* Cabecera y Navegación (con animación de Scroll) */
+        header {
+            background-color: var(--primary-wood);
+            color: white;
+            padding: 20px 0;
+            position: fixed; 
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: top 0.4s ease-in-out;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        header .logo-container img {
+            height: 60px;
+            width: auto;
+        }
+
+        header .logo-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        nav { text-align: center; width: 100%; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: color var(--transition-speed);
+        }
+
+        nav a:hover { color: #d4c8c0; text-decoration: none; }
+
+        /* Secciones Generales */
+        section {
+            padding: 80px 40px; 
+            background-color: white;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            transition: box-shadow var(--transition-speed);
+        }
+
+        section:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+
+        /* Sección Hero/Inicio */
+        .hero {
+            background-color: var(--bg-secondary);
+            background-image: linear-gradient(135deg, var(--bg-secondary) 0%, #D8CEBD 100%);
+            color: #2A211C;
+            text-align: center;
+            padding: 120px 20px;
+            border-radius: 12px;
+        }
+
+        .hero h2 { color: #2A211C; font-size: 3em; margin-bottom: 30px; }
+        .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .hero-content p { text-align: center; font-size: 1.1em; }
+
+        /* Sección Quiénes Somos Rediseñada */
+        .about-wrapper { max-width: 1050px; margin: 0 auto; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 30px; }
+        @media (max-width: 850px) { .about-grid { grid-template-columns: 1fr; } }
+        
+        .about-text-content p { text-align: justify; font-size: 1.05em; margin-bottom: 15px; color: #444; }
+        
+        .about-services { background-color: #FAFAFA; padding: 30px; border-radius: 12px; border: 1px solid #eee; }
+        .about-services h4 { margin-bottom: 25px; color: var(--primary-wood); text-align: center; font-size: 1.3em;}
+        .about-services ul { list-style: none; margin: 0; padding: 0; }
+        .about-services li { 
+            padding: 15px 20px; 
+            margin-bottom: 12px; 
+            background-color: white; 
+            border-radius: 8px; 
+            border-left: 5px solid var(--light-wood); 
+            box-shadow: var(--shadow-subtle); 
+            font-size: 0.95em; 
+            font-weight: 600; 
+            color: var(--text-heading);
+            transition: transform var(--transition-speed);
+        }
+        .about-services li:hover { transform: translateX(5px); border-left-color: var(--primary-wood); }
+
+        /* Catálogos y Botones */
+        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .catalog-card {
+            background-color: #FAFAFA;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .catalog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-wood);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 100%;
+            font-weight: 600;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .btn:hover { background-color: #332822; transform: scale(1.03); }
+        .btn-back { background-color: var(--light-wood); margin-bottom: 40px; width: auto; font-size: 1em; }
+
+        /* Trabajos Recientes (Galería Centrada 3 y 2) */
+        .gallery-wrapper { max-width: 1000px; margin: 0 auto; }
+        
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 25px; 
+            margin-top: 20px; 
+        }
+        
+        .gallery img {
+            width: calc(33.333% - 17px); 
+            min-width: 260px; 
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-subtle);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            cursor: pointer;
+            background-color: #eee; 
+        }
+
+        .gallery img:hover { transform: scale(1.05); box-shadow: var(--shadow-hover); z-index: 2; position: relative;}
+
+        @media (max-width: 850px) {
+            .gallery img { width: calc(50% - 13px); }
+        }
+        @media (max-width: 600px) {
+            .gallery img { width: 100%; }
+        }
+
+        /* Contacto sin formulario */
+        .contact-details { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-top: 30px;
+        }
+        .contact-info-block { 
+            flex: 1; 
+            min-width: 280px;
+            max-width: 450px;
+            padding: 40px 30px; 
+            background-color: #FAFAFA; 
+            border-radius: 12px; 
+            border: 1px solid #eee; 
+            text-align: center;
+        }
+        .contact-info-block h4 { color: var(--light-wood); margin-bottom: 20px; font-size: 1.3em; }
+
+        /* Páginas Legales */
+        .legal-page { display: none; padding: 80px 40px; background-color: white; min-height: 80vh; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 40px;}
+        .legal-content { max-width: 1000px; margin: 0 auto; }
+        .legal-content h2 { font-size: 2.8em; border-bottom: 2px solid var(--primary-wood); padding-bottom: 15px; margin-bottom: 40px; text-align: center; }
+        .legal-content h3 { font-size: 1.8em; margin-top: 40px; color: var(--light-wood); border-left: 5px solid var(--primary-wood); padding-left: 15px; }
+        .legal-content p, .legal-content ul { margin-bottom: 20px; text-align: justify; }
+        .legal-content ul { margin-left: 25px; }
+        .legal-content table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 1em; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-subtle); }
+        .legal-content table th, .legal-content table td { border: 1px solid #eee; padding: 15px; text-align: left; }
+        .legal-content table th { background-color: var(--primary-wood); color: white; font-weight: 600; }
+        .legal-content table tr:nth-child(even) { background-color: #FAFAFA; }
+
+        /* Pie de página */
+        footer { background-color: var(--primary-wood); color: white; text-align: center; padding: 50px 0; border-radius: 12px 12px 0 0; }
+        .footer-links { margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 25px; }
+        .footer-links a { color: #d4c8c0; text-decoration: none; font-size: 0.95em; cursor: pointer; transition: color var(--transition-speed); }
+        .footer-links a:hover { color: white; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<header id="main-header">
+    <div class="container" style="padding: 0;">
+        <div class="logo-container" onclick="showMainPage()">
+            <img src="image_c335b9.jpeg" alt="Dicartem S.L. Logo">
+            <h1>DICARTEM S.L.</h1>
+        </div>
+        <nav id="main-nav">
+            <a onclick="showMainPage('#inicio')">Inicio</a>
+            <a onclick="showMainPage('#nosotros')">Nosotros</a>
+            <a onclick="showMainPage('#catalogos')">Catálogos</a>
+            <a onclick="showMainPage('#trabajos')">Trabajos</a>
             <a onclick="showMainPage('#foro')">Preguntas</a>
             <a onclick="showMainPage('#contacto')">Contacto</a>
         </nav>
@@ -395,6 +765,324 @@
             </div>
         </div>
     </section>
+</main>
+
+<div id="page-aviso" class="legal-page container">
+    <div class="legal-content">
+        <button class="btn btn-back" onclick="showMainPage()">← Volver al inicio</button>
+        <h2>Aviso Legal y Condiciones de Uso</h2>
+        
+        <h3>1. Datos Identificativos</h3>
+        <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), a continuación se reflejan los siguientes datos:</p>
+        <ul>
+            <li><strong>Titular de la web:</strong> DICARTEM S.L.</li>
+            <li><strong>NIF:</strong> B45582293</li>
+            <li><strong>Domicilio social:</strong> Avda. de los pintores nº4, 45220 Yeles (Toledo), España.</li>
+            <li><strong>Datos Registrales:</strong> Sociedad limitada constituida en Madrid, en el año 2005. Inscrita en el Registro Mercantil de Toledo en el tomo 1287, folio 201, y hoja TO-22550, inscripción 1.</li>
+            <li><strong>Contacto:</strong> Teléfono 925 54 52 78 | Correo: dicartem@hotmail.com</li>
+        </ul>
+
+        <h3>2. Usuarios</h3>
+        <p>El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas. El simple acceso a este sitio web no supone entablar ningún tipo de relación comercial entre DICARTEM S.L. y el usuario.</p>
+
+        <h3>3. Propiedad Intelectual e Industrial</h3>
+        <p>DICARTEM S.L. por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, etc.). Todos los derechos reservados.</p>
+        <p>Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de DICARTEM S.L.</p>
+
+        <h3>4. Exclusión de Garantías y Responsabilidad</h3>
+        <p>DICARTEM S.L. no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos.</p>
+
+        <h3>5. Legislación Aplicable y Jurisdicción</h3>
+        <p>La relación entre DICARTEM S.L. y el USUARIO se regirá por la normativa española vigente y cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de Toledo, renunciando expresamente a cualquier otro fuero que pudiera corresponderles.</p>
+    </div>
+</div>
+
+<div id="page-privacidad" class="legal-page container">
+    <div class="legal-content">
+        <button class="btn btn-back" onclick="showMainPage()">← Volver al inicio</button>
+        <h2>Política de Privacidad y Protección de Datos</h2>
+        
+        <h3>1. Información al Usuario</h3>
+        <p><strong>Responsable del tratamiento:</strong><br>
+        Identidad: DICARTEM S.L. (en adelante EL RESPONSABLE) – B45582293<br>
+        Dirección: Avda. de los pintores nº4, 45220 Yeles (Toledo) ESPAÑA<br>
+        Teléfono: 925 54 52 78 / Móvil: +34 647 73 88 55<br>
+        Correo electrónico: dicartem@hotmail.com</p>
+
+        <h3>2. Finalidad del Tratamiento</h3>
+        <p>El RESPONSABLE tratará la información facilitada por los Usuarios con las siguientes finalidades:</p>
+        <ul>
+            <li><strong>Formulario de contacto y correos:</strong> Los datos serán tratados para la resolución de consultas y el envío de la información o presupuestos solicitados a nuestra empresa.</li>
+            <li><strong>Redes Sociales:</strong> Los datos recibidos a través de redes sociales serán tratados para atender las posibles solicitudes y gestionar interacciones con los perfiles sociales de DICARTEM S.L.</li>
+            <li><strong>Envío de Información Comercial:</strong> Se solicitará el consentimiento explícito de los usuarios de forma adicional para la remisión de comunicaciones publicitarias.</li>
+        </ul>
+
+        <h3>3. Criterios de Conservación y Legitimación</h3>
+        <p>El RESPONSABLE conservará los datos durante un plazo de tres años en cumplimiento de lo previsto en el art. 45 de la Ley 34/2002 de LSSICE, o el tiempo estrictamente necesario para cumplir con las obligaciones legales aplicables. El tratamiento de los datos tendrá su legitimación en el consentimiento explícitamente prestado por el usuario o en la relación precontractual/contractual.</p>
+
+        <h3>4. Comunicación de los Datos</h3>
+        <p>Los datos facilitados únicamente podrán ser cedidos a las Fuerzas y Cuerpos de Seguridad y/u otras Administraciones Públicas con competencias en la materia cuando la ley así lo exija. No se cederán a terceros para fines comerciales.</p>
+
+        <h3>5. Derechos que asisten al Usuario</h3>
+        <ul>
+            <li><strong>Derecho de acceso:</strong> Conocer y obtener gratuitamente información sobre sus datos sometidos a tratamiento.</li>
+            <li><strong>Derecho de rectificación:</strong> Corregir errores, modificar los datos inexactos o incompletos.</li>
+            <li><strong>Derecho de cancelación/supresión/olvido:</strong> Suprimir datos inadecuados o excesivos.</li>
+            <li><strong>Derecho de oposición:</strong> Oponerse al tratamiento de datos para determinadas finalidades.</li>
+            <li><strong>Derecho de Portabilidad:</strong> Solicitar copia en un formato estructurado y lectura mecánica.</li>
+        </ul>
+        <p>El Usuario podrá ejercer estos derechos dirigiendo un escrito a la dirección del responsable o al correo electrónico: dicartem@hotmail.com. En caso de insatisfacción, puede presentar reclamación ante la Agencia Española de Protección de Datos (AEPD), calle Jorge Juan, 6, 28001 Madrid.</p>
+
+        <h3>6. Medidas de Seguridad</h3>
+        <p>De conformidad con las normativas GDPR y LOPD, el RESPONSABLE garantiza que ha implementado políticas técnicas y organizativas apropiadas para proteger los derechos y libertades de los Usuarios, evitando la pérdida, mal uso o acceso no autorizado a los datos.</p>
+    </div>
+</div>
+
+<div id="page-cookies" class="legal-page container">
+    <div class="legal-content">
+        <button class="btn btn-back" onclick="showMainPage()">← Volver al inicio</button>
+        <h2>Política de Cookies</h2>
+        
+        <h3>1. Información sobre Cookies</h3>
+        <p>Debido a la entrada en vigor de la referente modificación de la “Ley de Servicios de la Sociedad de la Información” (LSSICE) establecida por el Real Decreto 13/2012, es de obligación obtener el consentimiento expreso del usuario de todas las páginas web que usan cookies prescindibles, antes de que éste navegue por ellas.</p>
+
+        <h3>2. ¿Qué son las Cookies?</h3>
+        <p>Las cookies y otras tecnologías similares (como píxeles o local shared objects) son herramientas empleadas por los servidores Web para almacenar y recuperar información acerca de sus visitantes, así como para ofrecer un correcto funcionamiento del sitio. Permiten recordar datos concernientes al usuario, como preferencias de visualización, inicio de sesión, etc.</p>
+
+        <h3>3. Cookies Afectadas y Exceptuadas</h3>
+        <p>Según la directiva de la UE, las cookies que requieren el consentimiento informado por parte del usuario son las cookies de analítica y de publicidad/afiliación, quedando exceptuadas las de carácter técnico y las necesarias para el funcionamiento del sitio web.</p>
+
+        <h3>4. Tipos de Cookies que Existen</h3>
+        <ul>
+            <li><strong>Cookies técnicas y funcionales:</strong> Permiten la navegación y utilización de opciones del sitio (ej. recordar idioma, carrito de compra). Son estrictamente necesarias.</li>
+            <li><strong>Cookies analíticas:</strong> Permiten el seguimiento y análisis del comportamiento de los usuarios (medición de actividad y elaboración de perfiles).</li>
+            <li><strong>Cookies publicitarias y comportamentales:</strong> Gestionan de forma eficaz los espacios publicitarios y recogen información sobre preferencias personales (retargeting).</li>
+            <li><strong>Cookies de sesión vs. persistentes:</strong> Las de sesión se borran al cerrar el navegador; las persistentes permanecen almacenadas un tiempo definido.</li>
+            <li><strong>Cookies propias vs. de terceros:</strong> Las propias se envían desde nuestro dominio; las de terceros, desde dominios asociados (ej. Google, Facebook).</li>
+        </ul>
+
+        <h3>5. Cookies Utilizadas en este Sitio Web</h3>
+        <table>
+            <tr>
+                <th>Categoría</th>
+                <th>Cookie</th>
+                <th>Duración</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>Necesaria</td>
+                <td>cookieyes-consent</td>
+                <td>1 año</td>
+                <td>Recuerda las preferencias de consentimiento de los usuarios sobre el uso de cookies en el sitio.</td>
+            </tr>
+            <tr>
+                <td>Analítica</td>
+                <td>_ga</td>
+                <td>1 año y 1 mes</td>
+                <td>Google Analytics: calcula datos de visitantes, sesiones y campañas para análisis del sitio.</td>
+            </tr>
+            <tr>
+                <td>Analítica</td>
+                <td>_ga_*</td>
+                <td>1 año y 1 mes</td>
+                <td>Google Analytics: almacena y cuenta las páginas vistas.</td>
+            </tr>
+        </table>
+
+        <h3>6. Cookies de Terceros</h3>
+        <p>Los servicios de terceros son ajenos al control del editor. Puedes consultar sus políticas de privacidad en sus respectivas páginas oficiales (ej. Double Click/Google Marketing, Facebook, Pinterest, Google Analytics, Youtube).</p>
+
+        <h3>7. Cómo Gestionar o Eliminar Cookies desde el Navegador</h3>
+        <p>Usted puede eliminar, gestionar o bloquear las cookies desde la configuración de su navegador en cualquier momento:</p>
+        <ul>
+            <li><strong>Google Chrome:</strong> <a href="http://support.google.com/chrome/answer/95647?hl=es" target="_blank">Instrucciones aquí</a>.</li>
+            <li><strong>Internet Explorer / Edge:</strong> <a href="https://support.microsoft.com/es-es/help/278835/how-to-delete-cookie-files-in-internet-explorer" target="_blank">Instrucciones aquí</a>.</li>
+            <li><strong>Mozilla Firefox:</strong> <a href="https://www.mozilla.org/es-ES/privacy/websites/#cookies" target="_blank">Instrucciones aquí</a>.</li>
+            <li><strong>Safari:</strong> <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank">Instrucciones aquí</a>.</li>
+            <li><strong>Opera:</strong> <a href="https://help.opera.com/en/latest/security-and-privacy/#clearBrowsingData" target="_blank">Instrucciones aquí</a>.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <div class="container gallery-wrapper">
+        <div class="footer-links">
+            <a onclick="showLegalPage('page-aviso')">Aviso Legal</a> |
+            <a onclick="showLegalPage('page-privacidad')">Política de Privacidad</a> |
+            <a onclick="showLegalPage('page-cookies')">Política de Cookies</a>
+        </div>
+        <p>&copy; 2026 Dicartem S.L. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    function hideAllPages() {
+        document.getElementById('page-main').style.display = 'none';
+        document.getElementById('page-aviso').style.display = 'none';
+        document.getElementById('page-privacidad').style.display = 'none';
+        document.getElementById('page-cookies').style.display = 'none';
+    }
+
+    function showLegalPage(pageId) {
+        hideAllPages();
+        document.getElementById(pageId).style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function showMainPage(hash) {
+        hideAllPages();
+        document.getElementById('page-main').style.display = 'block';
+        
+        if(hash) {
+            window.location.hash = hash;
+            const element = document.querySelector(hash);
+            if(element) {
+                setTimeout(() => {
+                    const headerOffset = 180;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }, 10);
+            }
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }
+
+    let lastScrollTop = 0;
+    const header = document.getElementById("main-header");
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            header.style.top = "-250px"; 
+        } else {
+            header.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
+<style>
+    /* Estilos del modal y fondo oscuro */
+    .cookie-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9998; }
+    .cookie-modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; z-index: 9999; max-width: 500px; width: 90%; box-shadow: 0 10px 30px rgba(0,0,0,0.2); color: #333; font-family: var(--font-body); }
+    .cookie-modal h3 { margin-top: 0; color: var(--primary-wood); border-bottom: 2px solid #eee; padding-bottom: 10px; font-family: var(--font-heading); }
+    .cookie-option { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+    .cookie-option label { font-weight: 600; color: var(--text-heading); }
+    .cookie-option p { margin: 5px 0 0 0; font-size: 0.85em; color: #666; }
+    
+    /* Botones */
+    .cookie-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;}
+    .btn-cookie { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; font-family: var(--font-body); font-size: 0.95em; }
+    .btn-accept { background-color: var(--primary-wood); color: white; }
+    .btn-accept:hover { background-color: #332822; }
+    .btn-reject { background-color: #eee; color: #333; }
+    .btn-reject:hover { background-color: #ccc; }
+    .btn-config { background-color: transparent; border: 1px solid var(--primary-wood); color: var(--primary-wood); }
+    .btn-config:hover { background-color: #f9f9f9; }
+    
+    /* Botones de interruptor (Toggle) */
+    .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 24px; }
+    .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+    input:checked + .slider { background-color: var(--light-wood); }
+    input:checked + .slider:before { transform: translateX(20px); }
+    input:disabled + .slider { background-color: var(--primary-wood); cursor: not-allowed; opacity: 0.7; }
+</style>
+
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: white; color: #333; padding: 20px; z-index: 9997; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); border-top: 4px solid var(--primary-wood);">
+    <div class="container" style="padding: 0; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+        <p style="margin: 0; text-align: center; font-size: 0.95em;">
+            En Dicartem S.L. utilizamos cookies propias y de terceros para asegurar el funcionamiento de la web, fines analíticos y mostrar publicidad personalizada. 
+            <a onclick="showLegalPage('page-cookies')" style="color: var(--light-wood); text-decoration: underline; cursor: pointer;">Política de Cookies</a>.
+        </p>
+        <div class="cookie-btns">
+            <button class="btn-cookie btn-reject" onclick="rechazarCookies()">Rechazar</button>
+            <button class="btn-cookie btn-config" onclick="abrirConfiguracion()">Personalizar</button>
+            <button class="btn-cookie btn-accept" onclick="aceptarTodas()">Aceptar todas</button>
+        </div>
+    </div>
+</div>
+
+<div id="cookie-overlay" class="cookie-overlay"></div>
+<div id="cookie-modal" class="cookie-modal">
+    <h3>Configuración de Cookies</h3>
+    <p style="font-size: 0.9em; margin-bottom: 20px; color: #555;">Seleccione las cookies que desea aceptar. Las cookies técnicas son estrictamente necesarias para el funcionamiento de la web.</p>
+    
+    <div class="cookie-option">
+        <div>
+            <label>Técnicas (Necesarias)</label>
+            <p>Permiten el funcionamiento básico de la web. No se pueden desactivar.</p>
+        </div>
+        <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
+    </div>
+    <div class="cookie-option">
+        <div>
+            <label>Analíticas</label>
+            <p>Miden el tráfico y comportamiento para mejorar la experiencia.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="check-analytics" checked><span class="slider"></span></label>
+    </div>
+    <div class="cookie-option" style="border-bottom: none;">
+        <div>
+            <label>Publicitarias</label>
+            <p>Muestran anuncios relevantes según su perfil de navegación.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="check-ads" checked><span class="slider"></span></label>
+    </div>
+
+    <div class="cookie-btns" style="margin-top: 25px;">
+        <button class="btn-cookie btn-accept" style="width: 100%;" onclick="guardarConfiguracion()">Guardar mis preferencias</button>
+    </div>
+</div>
+
+<script>
+    const banner = document.getElementById("cookie-banner");
+    const modal = document.getElementById("cookie-modal");
+    const overlay = document.getElementById("cookie-overlay");
+
+    // Revisar si ya ha elegido antes
+    document.addEventListener("DOMContentLoaded", function() {
+        if (!localStorage.getItem("dicartem_cookies_config")) {
+            banner.style.display = "block";
+        }
+    });
+
+    function aceptarTodas() {
+        localStorage.setItem("dicartem_cookies_config", JSON.stringify({ analytics: true, ads: true }));
+        cerrarTodo();
+    }
+
+    function rechazarCookies() {
+        localStorage.setItem("dicartem_cookies_config", JSON.stringify({ analytics: false, ads: false }));
+        cerrarTodo();
+    }
+
+    function abrirConfiguracion() {
+        modal.style.display = "block";
+        overlay.style.display = "block";
+    }
+
+    function guardarConfiguracion() {
+        const analytics = document.getElementById("check-analytics").checked;
+        const ads = document.getElementById("check-ads").checked;
+        localStorage.setItem("dicartem_cookies_config", JSON.stringify({ analytics: analytics, ads: ads }));
+        cerrarTodo();
+    }
+
+    function cerrarTodo() {
+        banner.style.display = "none";
+        modal.style.display = "none";
+        overlay.style.display = "none";
+    }
+</script>
+</body>
+</html>
 </main>
 
 <div id="page-aviso" class="legal-page container">
