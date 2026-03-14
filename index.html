@@ -369,7 +369,31 @@
         </div>
     </section>
 </main>
+<section id="foro" style="background-color: #FAFAFA; padding: 60px 20px; border-top: 2px solid #eee;">
+    <div class="container">
+        <h2 style="text-align: center;">Foro de Preguntas</h2>
+        <p style="text-align: center; margin-bottom: 40px;">¿Tienes dudas? Pregunta aquí abajo.</p>
+        
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = 'https://www.dicartem.com'; 
+                this.page.identifier = 'dicartem-home';
+            };
+            (function() { 
+                var d = document, s = d.createElement('script');
+                s.src = 'https://dicartem.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    </div>
+</section>
 
+<footer>
+    <div class="container">
+        </div>
+</footer>
 <div id="page-aviso" class="legal-page container">
     <div class="legal-content">
         <button class="btn btn-back" onclick="showMainPage()">← Volver al inicio</button>
