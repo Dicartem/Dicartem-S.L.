@@ -169,6 +169,16 @@
             height: 35px;
             fill: currentColor;
         }
+        /* --- ANIMACIONES DE APARICIÓN AL BAJAR --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -198,7 +208,7 @@
         </div>
     </section>
 
-    <section id="nosotros">
+    <section id="nosotros" class="reveal">
         <div class="about-wrapper">
             <h2 style="text-align: center;">Quiénes Somos</h2>
             <div class="about-grid">
@@ -222,7 +232,7 @@
         </div>
     </section>
 
-    <section id="catalogos">
+    <section id="catalogos" class="reveal">
         <div>
             <h2 style="text-align: center;">Nuestros Catálogos</h2>
             <p style="text-align: center;">Explore nuestra variedad de productos diseñados para profesionales y particulares.</p>
@@ -246,7 +256,7 @@
         </div>
     </section>
 
-    <section id="trabajos">
+    <section id="trabajos" class="reveal">
         <div class="gallery-wrapper">
             <h2 style="text-align: center; margin-bottom: 20px;">Trabajos Recientes</h2>
             <p style="text-align: center; margin-bottom: 40px;">Descubra una muestra de nuestra dedicación y precisión en cada proyecto. Haga clic para ampliar.</p>
@@ -261,7 +271,7 @@
         </div>
     </section>
     
-    <section id="contacto">
+    <section id="contacto" class="reveal">
         <div class="gallery-wrapper">
             <h2 style="text-align: center;">Contacto</h2>
             <div class="contact-details">
@@ -279,7 +289,7 @@
     </section>
 </main>
 
-<section id="foro" style="background-color: #FAFAFA; padding: 60px 20px; border-top: 2px solid #eee;">
+<section id="foro" class="reveal" style="background-color: #FAFAFA; padding: 60px 20px; border-top: 2px solid #eee;">
     <div class="container">
         <h2 style="text-align: center;">Foro de Preguntas</h2>
         <p style="text-align: center; margin-bottom: 40px;">¿Tienes dudas? Pregunta aquí abajo.</p>
@@ -589,6 +599,20 @@
     function cerrarImagen() {
         lightbox.style.display = "none";
     }
+    // --- MOTOR DE ANIMACIONES AL HACER SCROLL ---
+    const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+            // Si la sección entra en la pantalla, le ponemos la clase "active" para que aparezca
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.15 }); // El 0.15 significa que se activa cuando asoma el 15% de la sección
+
+    // Buscamos todo lo que tenga la clase "reveal" y lo vigilamos
+    document.querySelectorAll('.reveal').forEach((elemento) => {
+        observador.observe(elemento);
+    });
 </script>
     <a href="https://wa.me/34647738855?text=Hola%20Pablo,%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre..." class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
