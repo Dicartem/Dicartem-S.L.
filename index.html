@@ -568,6 +568,27 @@
         lastScrollTop = scrollTop;
     });
 </script>
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--primary-wood); color: white; padding: 20px; text-align: center; z-index: 9999; box-shadow: 0 -4px 10px rgba(0,0,0,0.2);">
+    <p style="margin: 0; font-size: 0.95em; display: inline-block; vertical-align: middle;">
+        Utilizamos cookies propias y de terceros para mejorar nuestros servicios y analizar el tráfico. 
+        <a onclick="showLegalPage('page-cookies')" style="color: #d4c8c0; text-decoration: underline; cursor: pointer; margin-left: 5px;">Leer Política de Cookies</a>.
+    </p>
+    <button onclick="aceptarCookies()" style="background-color: var(--light-wood); color: white; border: none; padding: 10px 25px; margin-left: 20px; border-radius: 8px; font-weight: 600; cursor: pointer; vertical-align: middle; transition: 0.3s;">Aceptar</button>
+</div>
 
+<script>
+    // Mostrar el banner solo si el usuario no ha aceptado antes
+    document.addEventListener("DOMContentLoaded", function() {
+        if (!localStorage.getItem("cookiesAceptadas_dicartem")) {
+            document.getElementById("cookie-banner").style.display = "block";
+        }
+    });
+
+    // Función para ocultar el banner y guardar la preferencia
+    function aceptarCookies() {
+        localStorage.setItem("cookiesAceptadas_dicartem", "true");
+        document.getElementById("cookie-banner").style.display = "none";
+    }
+</script>
 </body>
 </html>
